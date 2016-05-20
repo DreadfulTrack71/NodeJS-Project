@@ -35,9 +35,8 @@ function handleRequest(request, response) {
 			console.log('OK: ' + filename);
 			console.log(data)
 		});
-
-	}
-);
+	);
+}
 
 // Create a server
 var server = http.createServer(handleRequest);
