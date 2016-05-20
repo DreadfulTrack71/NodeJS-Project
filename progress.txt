@@ -1,0 +1,7 @@
+2016-05-20-15:37
+Made first http server from Node.JS!
+The message display is from a fixed string. Try having it read from a file instead.
+
+2016-05-20-15:49
+Add a second URL that can be used to gracefully shutdown the server, rather than
+hitting ctrl+c at the command prompt
