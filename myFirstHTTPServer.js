@@ -25,7 +25,7 @@ const PORT=8080;
 
 // We need a function which handles requests and send response
 function handleRequest(request, response) {
-	fs.readFilke("HelloWorld.txt", "utf8", function (error, data) {
+	fs.readFile("HelloWorld.txt", "utf8", function (error, data) {
 		console.log(data);
 		response.write(data);
 		response.end();	
