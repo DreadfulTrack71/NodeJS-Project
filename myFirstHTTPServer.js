@@ -32,6 +32,7 @@ function handleRequest(request, response) {
 		response.setHeader('content-type', 'text/html');
 		console.log("Query: " + query);
 		response.write(data);
+		respone.write(query.q);
 		response.end();	
 	});
 }
