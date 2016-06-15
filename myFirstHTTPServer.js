@@ -19,6 +19,7 @@ var http = require('http');
 // Require the fs module
 var fs = require('fs');
 
+var url = require('url');
 
 // Lets define a port we want to listen to
 const PORT=8080;
@@ -26,8 +27,10 @@ const PORT=8080;
 // We need a function which handles requests and send response
 function handleRequest(request, response) {
 	fs.readFile("HelloWorld.txt", "utf8", function (error, data) {
+		var url_parts = url.parse(request.url, true);
+		var query = url_parts.query;
 		response.setHeader('content-type', 'text/html');
-		console.log(data);
+		console.log("Query: " + query);
 		response.write(data);
 		response.end();	
 	});
