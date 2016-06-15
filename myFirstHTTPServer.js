@@ -12,6 +12,11 @@
 // Add a second URL that can be used to gracefully terminate the server
 // rather than hitting ctrl+c at the command prompt
 
+// 2015-06-15
+// Successfully made program read a text file!
+// Made program display text based on url code
+// Cannot do this more than once without the program crashing. Need to fix this!
+
 
 // Lets require/import the HTTP module
 var http = require('http');
@@ -32,7 +37,7 @@ function handleRequest(request, response) {
 		response.setHeader('content-type', 'text/html');
 		console.log("Query: " + query);
 		response.write(data);
-		response.write(query.q);
+		response.write(query.q.toString());
 		response.end();	
 	});
 }
