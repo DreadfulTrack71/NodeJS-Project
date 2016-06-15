@@ -19,18 +19,17 @@ var http = require('http');
 // Require the fs module
 var fs = require('fs');
 
-// Read a text file and save the text to a variable
-fs.readFile("HelloWorld.txt", "utf8", function(error, data) {
-	console.log(data);
-}
-);
 
 // Lets define a port we want to listen to
 const PORT=8080;
 
 // We need a function which handles requests and send response
 function handleRequest(request, response) {
-	response.end('It works!! Path Hit: ' + request.url);
+	fs.readFilke("HelloWorld.txt", "utf8", function (error, data) {
+		console.log(data);
+		response.write(data);
+		response.end();	
+	});
 }
 
 // Create a server
