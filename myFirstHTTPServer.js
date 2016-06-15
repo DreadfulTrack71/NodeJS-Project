@@ -35,7 +35,7 @@ function handleRequest(request, response) {
 		var url_parts = url.parse(request.url, true);
 		var query = url_parts.query;
 		response.setHeader('content-type', 'text/html');
-		console.log("Query: " + query);
+		console.log("Query: " + query.toString());
 		response.write(data);
 		response.write(query.q);
 		response.end();	
