@@ -5,3 +5,8 @@ The message display is from a fixed string. Try having it read from a file inste
 2016-05-20-15:49
 Add a second URL that can be used to gracefully shutdown the server, rather than
 hitting ctrl+c at the command prompt
+
+2016-06-15
+Successfuilly read from file!
+Added code to display text based on url with q= syntax. The server crashes when that code is executed more than once. Fix that crash.
+Use that syntax to add code to shutdown the server.
