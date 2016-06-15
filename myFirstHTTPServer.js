@@ -28,7 +28,7 @@ const PORT=8080;
 function handleRequest(request, response) {
 	fs.readFile("HelloWorld.txt", "utf8", function (error, data) {
 		var url_parts = url.parse(request.url, true);
-		var query = JSON.stringify(url_parts.query);
+		var query = url_parts.query;
 		response.setHeader('content-type', 'text/html');
 		console.log("Query: " + query);
 		response.write(data);
