@@ -12,30 +12,25 @@
 // Add a second URL that can be used to gracefully terminate the server
 // rather than hitting ctrl+c at the command prompt
 
-// Make sure a filename is given as a commandline parameter
-if (process.argv.length < 3) {
-	console.log('Usage: node ' + process.argv[1] + ' FILENAME');
-	process.exit(1);
-}
-
-// Import/require the fs module
-var fs = require('fs'), filename = process.argv[2];
 
 // Lets require/import the HTTP module
 var http = require('http');
+
+// Require the fs module
+var fs = require('fs');
+
+// Read a text file and save the text to a variable
+fs.readFile("HelloWorld.txt", "utf8", function(error, data) {
+	console.log(data);
+}
+);
 
 // Lets define a port we want to listen to
 const PORT=8080;
 
 // We need a function which handles requests and send response
-// Response will now read an input file and print its contents
 function handleRequest(request, response) {
-	response.end( fs.readFile(filename, 'utf8', function(err, data) {
-		if (err) throw err;
-			console.log('OK: ' + filename);
-			console.log(data)
-		});
-	);
+	response.end('It works!! Path Hit: ' + request.url);
 }
 
 // Create a server
