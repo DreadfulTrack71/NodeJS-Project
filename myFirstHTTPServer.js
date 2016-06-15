@@ -31,7 +31,7 @@ const PORT=8080;
 
 // We need a function which handles requests and send response
 function handleRequest(request, response) {
-	fs.readFile("HelloWorld.txt", "utf8", function (error, data) {
+	fs.readFile("serverMessage.txt", "utf8", function (error, data) {
 		var url_parts = url.parse(request.url, true);
 		var query = url_parts.query;
 		response.setHeader('content-type', 'text/html');
