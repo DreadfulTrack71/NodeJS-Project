@@ -1,5 +1,5 @@
 // Created 2016-05-20 by Jonathan Perry
-// This program will setup a simple http server using code from a begginer's blg
+// This program will setup a simple http server using code from a begginer's blog
 // for NodeJS
 // URL: http://blog.modulus.io/build-your-first-http-server-in-nodejs
 
